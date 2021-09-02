@@ -5,14 +5,18 @@ import ReactCardFlip from 'react-card-flip';
 
 const Front = styled.img`
   border-radius: 20px;
-  margin: auto;
-  padding: 5px;
+  margin: 5px;
+  padding: 2px;
+  border: 2px solid white;
+  background-color: white;
 `;
 
 const Back = styled.img`
   border-radius: 20px;
-  margin: auto;
-  padding: 5px;
+  background-color: white;
+  margin: 5px;
+  padding: 2px;
+  border: 2px solid white;
   cursor: pointer;
   ${({ isInactive }) => isInactive && `
     opacity: 0;

@@ -1,8 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styled from 'styled-components';
 import Cards from './Card.jsx';
-import background from '../../../images/background.jpg';
-import WinnerModal from './Modal.jsx';
+import background from '../../../images/background.png';
+import WinnerModal from './WinnerModal.jsx';
+import PlanetModal from './PlanetModal.jsx';
 
 const Board = styled.div`
   display: flex;
@@ -11,15 +12,28 @@ const Board = styled.div`
   flex-wrap: wrap;
   ${({ difficulty }) => {
     if (difficulty === 'easy') return `
-      width: 450px;
+      width: 500px;
     `
     if (difficulty === 'medium') return `
-      width: 600px;
+      width: 675px;
     `
     if (difficulty === 'hard') return `
-      width: 750px;
+      width: 800px;
     `
   }};
+  background-color: rgba(255, 255, 255, .1);
+  padding: 10px;
+`;
+
+const Title = styled.div`
+  font-size: 45px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: Arial;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, .1);
+
 `;
 
 const Button = styled.button`
@@ -28,16 +42,20 @@ const Button = styled.button`
   align-items: center;
   height: 50px;
   width: 150px;
-  border: 3px solid black;
+  border: 3px solid white;
   border-radius: 10px;
   margin: 10px;
   cursor: pointer;
+  background-image: url(${background});
+  color: white;
 `;
 
 const Page = styled.div`
   display: flex;
   justify-content: center;
-  // background-image: url(${background});
+  background-image: url(${background});
+  width: 100vw;
+  height: 100vh;
 `;
 
 const shuffleCards = (array) => {
@@ -62,6 +80,7 @@ const App = ({ planets }) => {
   const [matchedCards, setMatchedCards] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [shouldDisableAllCards, setShouldDisableAllCards] = useState(false);
+  const [planetFact, setPlanetFact] = useState(null);
   const timeout = useRef(null);
 
   useEffect(() => {
@@ -115,14 +134,18 @@ const App = ({ planets }) => {
     const second = openedCards[1];
     enable();
     if (cards[first].name === cards[second].name) {
+      setPlanetFact(cards[first].name)
       setMatchedCards(matchedCards.concat([cards[first].name]));
-      console.log(matchedCards)
       setOpenedCards([]);
       return;
     }
     timeout.current = setTimeout(() => {
       setOpenedCards([]);
     }, 600);
+  };
+
+  const closePlanetModal = () => {
+    setPlanetFact(null);
   };
 
   const handleStartOver = () => {
@@ -151,7 +174,10 @@ const App = ({ planets }) => {
 
   return (
     <Page>
-      <WinnerModal show={showModal} handleStartOver={handleStartOver} />
+      <div>
+      <Title>SPACE RACE</Title>
+      <PlanetModal planetFact={planetFact} closePlanetModal={closePlanetModal}/>
+      <WinnerModal show={showModal} handleStartOver={handleStartOver} planetFact={planetFact} />
       <Board difficulty={difficulty}>
         {cards.map((card, index) => {
           return (
@@ -171,6 +197,7 @@ const App = ({ planets }) => {
         <Button onClick={handleHard}>HARD</Button>
         <Button onClick={handleStartOver}>START OVER</Button>
       </Board>
+      </div>
     </Page>
   )
 }
