@@ -52,6 +52,7 @@ const Modal = styled.div`
   z-index: 2;
   border: 5px solid white;
   border-radius: 10px;
+  opacity: 0.95;
 `;
 
 const PlanetImage = styled.img`
@@ -59,6 +60,7 @@ const PlanetImage = styled.img`
   height: 300px;
   border-radius: 10px;
   background: white;
+  opacity: 0.9;
 `;
 
 const Description = styled.div`
@@ -84,6 +86,7 @@ const Button = styled.button`
   cursor: pointer;
   background-image: url(${background});
   color: white;
+  opacity: 0.9;
 `;
 
 const PlanetModal = ({planetFact, closePlanetModal}) => {

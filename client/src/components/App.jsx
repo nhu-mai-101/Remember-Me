@@ -23,6 +23,7 @@ const Board = styled.div`
   }};
   background-color: rgba(255, 255, 255, .1);
   padding: 10px;
+  border-radius: 25px;
 `;
 
 const Title = styled.div`
@@ -32,7 +33,7 @@ const Title = styled.div`
   justify-content: center;
   font-family: Arial;
   padding: 5px;
-  background-color: rgba(255, 255, 255, .1);
+  // background-color: rgba(255, 255, 255, .1);
 
 `;
 
@@ -48,6 +49,7 @@ const Button = styled.button`
   cursor: pointer;
   background-image: url(${background});
   color: white;
+  opacity: 0.9;
 `;
 
 const Page = styled.div`
