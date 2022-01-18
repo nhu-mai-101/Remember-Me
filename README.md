@@ -30,4 +30,8 @@ Now, the page is ready to load at http://localhost:3001/
 
 **Client:** Javascript, React, Styled Components
 
+<<<<<<< HEAD
 **Server:** Node, Express
+=======
+**Server:** Node, Express
+>>>>>>> 511b6a8642f0aae0a6e48dc2088f1305fe7aac99
