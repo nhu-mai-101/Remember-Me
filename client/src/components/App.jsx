@@ -177,7 +177,7 @@ const App = ({ planets }) => {
   return (
     <Page>
       <div>
-      <Title>SPACE RACE</Title>
+      <Title>SPACE JAM</Title>
       <PlanetModal planetFact={planetFact} closePlanetModal={closePlanetModal}/>
       <WinnerModal show={showModal} handleStartOver={handleStartOver} planetFact={planetFact} />
       <Board difficulty={difficulty}>

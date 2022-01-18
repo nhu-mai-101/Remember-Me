@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nhu-mai-101/Remember-Me.git"
+    "url": "git+https://github.com/nhu-mai-101/Space-Jam.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nhu-mai-101/Remember-Me/issues"
+    "url": "https://github.com/nhu-mai-101/Space-Jam/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -28,7 +28,7 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^4.5.0"
   },
-  "homepage": "https://github.com/nhu-mai-101/Remember-Me#readme",
+  "homepage": "https://github.com/nhu-mai-101/Space-Jam#readme",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "babel-loader": "^8.2.2",
