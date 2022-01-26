@@ -31,10 +31,6 @@ Now, the page is ready to load at http://localhost:3001/
 
 ## Tech Stack
 
-**Client:** Javascript, React, Styled Components
-
-**Server:** Node, Express
-
 <table align="center">
   <tbody>
     <tr>
