@@ -67,4 +67,4 @@ Now, the page is ready to load at http://localhost:3001/
 </table>
 
 ## Acknowledgements
-[React Memory Card Game Tutorial](https://javascript.plainenglish.io/building-a-card-memory-game-in-react-e6400b226b8f)
+[React Memory Card Game](https://javascript.plainenglish.io/building-a-card-memory-game-in-react-e6400b226b8f)
